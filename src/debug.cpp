@@ -55,6 +55,9 @@ namespace bx
 
 	void debugOutput(const char* _out)
 	{
+#if BX_SILENCE_DEBUG_OUTPUT
+		return;
+#endif // BX_SILENCE_DEBUG_OUTPUT
 #if BX_CRT_NONE
 		crt0::debugOutput(_out);
 #elif BX_PLATFORM_ANDROID
